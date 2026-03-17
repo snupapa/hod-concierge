@@ -73,21 +73,7 @@ a {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
   text-decoration: none;
-}
-
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.5);
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.4rem;
-  letter-spacing: 0.08em;
 }
 
 .brand-text {
@@ -419,11 +405,5 @@ a {
 
   .service-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 699px) {
-  .brand-mark {
-    display: none;
   }
 }
