@@ -421,3 +421,9 @@ a {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
+
+@media (max-width: 699px) {
+  .brand-mark {
+    display: none;
+  }
+}
