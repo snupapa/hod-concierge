@@ -398,6 +398,37 @@ a {
   }
 }
 
+@media (max-width: 699px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .product-image-wrap {
+    aspect-ratio: 1 / 1.2;
+    padding: 4px;
+  }
+
+  .product-body {
+    padding: 12px;
+  }
+
+  .product-title {
+    font-size: 0.98rem;
+    line-height: 1.3;
+  }
+
+  .product-price {
+    margin-top: 4px;
+    font-size: 0.92rem;
+  }
+
+  .product-body::before {
+    margin-bottom: 8px;
+    font-size: 0.64rem;
+  }
+}
+
 @media (min-width: 1040px) {
   .product-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
