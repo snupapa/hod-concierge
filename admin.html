@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>House of Deb | Admin</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="admin.js"></script>
+  </head>
+  <body class="admin-body">
+    <div class="page-shell admin-shell">
+      <header class="admin-header">
+        <div class="brand-lockup">
+          <span class="brand-mark">HD</span>
+          <div>
+            <p class="eyebrow">Private Concierge</p>
+            <h1>House of Deb Admin</h1>
+          </div>
+        </div>
+        <div class="admin-header-actions">
+          <a class="nav-link" href="/">Public Site</a>
+          <button class="button button-secondary admin-signout" id="sign-out-button" type="button">
+            Sign Out
+          </button>
+        </div>
+      </header>
+
+      <main class="admin-main">
+        <section class="admin-auth-panel" id="auth-panel">
+          <p class="section-tag">Admin Access</p>
+          <h2>Secure dashboard access for House of Deb.</h2>
+          <p>
+            Sign in with your approved admin email. A secure magic link will be sent to your inbox.
+          </p>
+          <form class="admin-auth-form" id="auth-form">
+            <label class="field">
+              <span>Admin Email</span>
+              <input type="email" name="email" placeholder="your@email.com" required />
+            </label>
+            <div class="form-actions">
+              <button class="button button-primary" id="auth-submit" type="submit">Send Magic Link</button>
+              <p class="form-note" id="auth-note">Only approved admin emails can access inquiries.</p>
+            </div>
+          </form>
+        </section>
+
+        <section class="admin-dashboard hidden" id="dashboard">
+          <div class="dashboard-topbar">
+            <div>
+              <p class="section-tag">Inquiry Dashboard</p>
+              <h2>Private inquiries</h2>
+            </div>
+            <div class="dashboard-controls">
+              <label class="field filter-field">
+                <span>Status Filter</span>
+                <select id="status-filter">
+                  <option value="all">All statuses</option>
+                  <option value="new">New</option>
+                  <option value="reviewing">Reviewing</option>
+                  <option value="qualified">Qualified</option>
+                  <option value="closed">Closed</option>
+                </select>
+              </label>
+              <button class="button button-secondary" id="refresh-button" type="button">Refresh</button>
+            </div>
+          </div>
+
+          <div class="dashboard-summary" id="dashboard-summary">
+            <article class="summary-card">
+              <span class="section-tag">Total</span>
+              <strong id="total-count">0</strong>
+            </article>
+            <article class="summary-card">
+              <span class="section-tag">New</span>
+              <strong id="new-count">0</strong>
+            </article>
+            <article class="summary-card">
+              <span class="section-tag">Qualified</span>
+              <strong id="qualified-count">0</strong>
+            </article>
+          </div>
+
+          <p class="form-note" id="dashboard-note">Connect Supabase and sign in to view inquiries.</p>
+          <div class="inquiry-list" id="inquiry-list"></div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
