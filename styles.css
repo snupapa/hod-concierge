@@ -21,7 +21,11 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at top left, rgba(154, 120, 88, 0.12), transparent 28%),
+    radial-gradient(
+      circle at top left,
+      rgba(154, 120, 88, 0.12),
+      transparent 28%
+    ),
     linear-gradient(180deg, #fcfaf6 0%, #f6f1e9 100%);
   color: var(--text);
   font-family: "Instrument Sans", sans-serif;
@@ -74,6 +78,7 @@ a {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
+  min-width: 0;
 }
 
 .brand-text {
@@ -102,8 +107,9 @@ a {
 }
 
 .brand-name {
-  font-size: 1.7rem;
+  font-size: 1.95rem;
   color: var(--text);
+  white-space: nowrap;
 }
 
 .nav-actions,
@@ -121,7 +127,10 @@ a {
   padding: 0 18px;
   border-radius: 999px;
   text-decoration: none;
-  transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
 }
 
 .nav-link {
@@ -267,11 +276,17 @@ a {
   grid-template-columns: 1fr;
 }
 
+.service-grid {
+  margin-top: 18px;
+}
+
 .product-card {
   overflow: hidden;
   padding: 0;
   background: rgba(255, 255, 255, 0.62);
-  transition: transform 220ms ease, box-shadow 220ms ease;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease;
 }
 
 .product-card:hover {
@@ -285,8 +300,12 @@ a {
   display: grid;
   place-items: center;
   padding: 6px;
-  background:
-    radial-gradient(circle at top, rgba(255, 255, 255, 0.92), rgba(247, 239, 228, 0.92) 54%, rgba(234, 219, 200, 0.98) 100%);
+  background: radial-gradient(
+    circle at top,
+    rgba(255, 255, 255, 0.92),
+    rgba(247, 239, 228, 0.92) 54%,
+    rgba(234, 219, 200, 0.98) 100%
+  );
 }
 
 .product-image {
@@ -358,7 +377,11 @@ a {
   align-items: flex-start;
   gap: 22px;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.52), rgba(240, 232, 220, 0.88)),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.52),
+      rgba(240, 232, 220, 0.88)
+    ),
     var(--surface-strong);
 }
 
@@ -399,6 +422,39 @@ a {
 }
 
 @media (max-width: 699px) {
+  .topbar {
+    align-items: center;
+    gap: 8px;
+  }
+
+  .hero-grid {
+    padding-top: 26px;
+  }
+
+  .section-space {
+    padding-top: 26px;
+  }
+
+  .section-heading {
+    gap: 0;
+  }
+
+  .brand-name {
+    font-size: 1.5rem;
+  }
+
+  .nav-actions {
+    width: 100%;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  .nav-link {
+    min-height: 36px;
+    padding: 0 12px;
+    font-size: 0.92rem;
+  }
+
   .product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
